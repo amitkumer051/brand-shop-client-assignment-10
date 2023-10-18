@@ -21,7 +21,10 @@ const NavBar = () => {
                                 <li className={currentPath === '/contactUs' ? 'active' : ''}><NavLink to='/contactUs'>Contact Us</NavLink></li>
                             </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <div className="flex items-center">
+                    <img className="w-auto h-14" src="https://i.ibb.co/rtvBzLR/final-logo.png" alt="Logo" />
+                    <h2 className="text-2xl font-semibold text-red-600">Autovance</h2>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <nav>
