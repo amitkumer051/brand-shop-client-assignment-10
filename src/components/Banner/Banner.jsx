@@ -1,13 +1,13 @@
-
+import { BsTools } from 'react-icons/bs';
 const Banner = () => {
     return (
-        <div className="hero mb-10 lg:h-[450px] h-[800px]" style={{ backgroundImage: 'url(https://i.ibb.co/6gFnr9B/banner12.jpg)' }}>
+        <div className="hero mb-10 lg:h-[460px] md:h-[700px] h-[800px]" style={{ backgroundImage: 'url(https://i.ibb.co/6gFnr9B/banner12.jpg)' }}>
             <div className="hero-overlay  bg-opacity-60"></div>
             <div className=" text-center text-white lg:flex items-center">
                 <div className="lg:w-1/2 p-10">
                     <h1 className="mb-4 text-5xl font-bold">Automotive sop and service center</h1>
                     <p className="mb-5">Our Goal is provides excellent customer service, including clear communication about repairs, estimates, and completion timeset.</p>
-                    <button className="btn ">Get Started service</button>
+                    <button className="btn ">Get Started service <BsTools></BsTools></button>
                 </div>
 
 
@@ -30,10 +30,6 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* <div className="lg:w-1/2 lg:visible  ">
-                   <img className="w-[350px] mx-auto justify-center rounded-xl" src="https://i.ibb.co/gz7VXdr/banner1.jpg" alt="" />
-                </div> */}
             </div>
         </div>
     );

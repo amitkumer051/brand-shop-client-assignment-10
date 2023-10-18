@@ -11,5 +11,5 @@ nav ul {
   }
   
   nav ul li a.active {
-    color: white; 
+    color: red; 
   }

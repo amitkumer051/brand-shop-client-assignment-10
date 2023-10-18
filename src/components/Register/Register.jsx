@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
-
+    const { createUser } = useContext(AuthContext)
     const handleRegister = event => {
         event.preventDefault();
         const form =event.target;
@@ -11,6 +14,31 @@ const Register = () => {
         const password =form.password.value;
         const users={name,photo,email,password}
         console.log(users);
+
+        if (password.length < 6) {
+            Swal.fire('Password should be at least 6 characters or longer')
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            Swal.fire('Your password need one upper case characters.')
+            return;
+        }
+        else if (!/[#$%&?]/.test(password)) {
+            Swal.fire('Your password need one Special characters.')
+            return;
+        }
+
+        createUser(email, password,name,photo)
+            .then(result => {
+                console.log(result.user);
+                Swal.fire('Registration Successfull')
+                form.reset();
+            })
+            .catch(error => {
+                console.error(error)
+                Swal.fire(error.message);
+                form.reset()
+            })
     }
     return (
         <div className="hero py-14 bg-base-200">
