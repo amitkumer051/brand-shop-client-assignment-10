@@ -1,0 +1,15 @@
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  nav ul li a.active {
+    color: #64df1c; 
+  }
