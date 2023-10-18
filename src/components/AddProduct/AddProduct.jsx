@@ -69,7 +69,7 @@ const AddProduct = () => {
                     </div>
 
                    <div className="my-6">
-                   <button className="btn btn-secondary w-full">Add Product</button>
+                   <button className="p-2 bg-red-400 rounded-lg text-white font-bold hover:bg-red-500 w-full">Add Product</button>
                    </div>
                 </form>
             </div>

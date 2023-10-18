@@ -2,12 +2,11 @@ import { Link, NavLink } from "react-router-dom";
 import './navbar.css'
 
 const NavBar = () => {
-
     const currentPath = window.location.pathname;
 
     return (
-        <div>
-            <div className="navbar bg-red-100">
+        <div> 
+            <div className="navbar bg-gray-300">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -23,7 +22,7 @@ const NavBar = () => {
                     </div>
                     <div className="flex items-center">
                     <img className="w-auto h-14" src="https://i.ibb.co/rtvBzLR/final-logo.png" alt="Logo" />
-                    <h2 className="text-2xl font-semibold text-red-600">Autovance</h2>
+                    <h2 className="text-3xl font-semibold text-red-600">Autovance</h2>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -39,7 +38,7 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     <Link to='/login'>
-                    <button className="bg-orange-400 px-3 font-semibold py-1 text-white rounded-2xl">Login</button>
+                    <button className="bg-red-400 hover:bg-red-500 px-3 font-semibold py-1 text-white rounded-2xl">Login</button>
                     </Link>
                 </div>
             </div>
