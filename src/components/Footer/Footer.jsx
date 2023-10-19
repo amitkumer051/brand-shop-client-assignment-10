@@ -4,7 +4,7 @@ const Footer = () => {
         <footer className="footer p-10 bg-neutral text-white">
   <aside>
   <img className="w-auto h-16 " src="https://i.ibb.co/rtvBzLR/final-logo.png" alt="Logo" />
-    <p>Autovance Ltd.<br/>Providing reliable tech since 1987</p>
+    <p>Autovance Ltd.<br/>Providing reliable Automotive since 1987</p>
   </aside> 
   <nav>
     <header className="text-xl font-bold text-white">Social</header> 
