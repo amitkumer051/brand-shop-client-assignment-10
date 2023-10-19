@@ -7,6 +7,7 @@ import MyCurt from "../components/MyCurt/MyCurt";
 import Blogs from "../components/Blogs/Blogs";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import Brand from "../components/Brand/Brand";
 
 const router = createBrowserRouter([
     {
@@ -39,7 +40,10 @@ const router = createBrowserRouter([
             element:<Blogs></Blogs>
         }
       ]
-    },
+    },{
+        path:'/brand',
+        element:<Brand></Brand>,
+    }
   ]);
 
 export default router;

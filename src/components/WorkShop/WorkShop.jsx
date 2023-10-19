@@ -9,7 +9,7 @@ const WorkShop = () => {
                     <h2> Worldwide Offices</h2>
                 </div>
                 <div className="bg-red-400 p-8 h-[150px] mx-auto justify-center bg-opacity-70 w-[150px] rounded-full">
-                    <h2 className="text-5xl font-bold">30</h2>
+                    <h2 className="text-5xl font-bold">100</h2>
                     <h2>Staffs</h2>
                 </div>
                 <div className="bg-red-400 p-5 h-[150px] mx-auto justify-center bg-opacity-70 w-[150px] rounded-full">

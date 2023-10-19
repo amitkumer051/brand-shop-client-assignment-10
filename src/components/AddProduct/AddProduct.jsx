@@ -64,11 +64,10 @@ const AddProduct = () => {
                             <label className="label">
                                 <span className="label-text">Product Rating</span>
                             </label>
-                            <label className="">
+                            <label>
                                 <input type="text" placeholder="Product Rating" name="rating" className="input input-bordered w-full" />
                             </label>
                         </div>
-
                         <div className="my-6">
                             <button className="p-2 bg-red-400 rounded-lg text-white font-bold hover:bg-red-500 w-full">Add Product</button>
                         </div>

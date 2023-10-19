@@ -1,7 +1,7 @@
 import { BsTools } from 'react-icons/bs';
 const Banner = () => {
     return (
-        <div className="hero mb-10 lg:h-[460px] md:h-[700px] h-[800px]" style={{ backgroundImage: 'url(https://i.ibb.co/6gFnr9B/banner12.jpg)' }}>
+        <div className="hero mb-14 lg:h-[460px] md:h-[700px] h-[800px]" style={{ backgroundImage: 'url(https://i.ibb.co/6gFnr9B/banner12.jpg)' }}>
             <div className="hero-overlay  bg-opacity-60"></div>
             <div className=" text-center text-white lg:flex items-center">
                 <div className="lg:w-1/2 p-10">
