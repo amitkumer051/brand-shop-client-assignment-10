@@ -1,45 +1,54 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './navbar.css'
+import { AuthContext } from "../../providers/AuthProvider";
+import { useContext } from "react";
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext)
     const currentPath = window.location.pathname;
 
+    const handleSignOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => console.error(error))
+    }
+
     return (
-        <div> 
-            <div className="navbar bg-gray-300">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                        </label>
-                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                <li className={currentPath === '/' ? 'active' : ''}><NavLink to='/'>Home</NavLink></li>
-                                <li className={currentPath === '/addProduct' ? 'active' : ''}><NavLink to='/addProduct'>Add Product</NavLink></li>
-                                <li className={currentPath === '/myCurt' ? 'active' : ''}><NavLink to='/myCurt'>My Curt</NavLink></li>
-                                <li className={currentPath === '/blogs' ? 'active' : ''}><NavLink to='/blogs'>Blogs</NavLink></li>
-                                <li className={currentPath === '/contactUs' ? 'active' : ''}><NavLink to='/contactUs'>Contact Us</NavLink></li>
-                            </ul>
-                    </div>
-                    <div className="flex items-center">
-                    <img className="w-auto h-14" src="https://i.ibb.co/rtvBzLR/final-logo.png" alt="Logo" />
-                    <h2 className="text-3xl font-semibold text-red-600">Autovance</h2>
+        <div>
+            <div className="lg:flex space-y-4 text-center items-center lg:justify-between p-2  bg-gray-300">
+                <div className="">
+                    <div className="flex items-center mx-auto justify-center">
+                    <img className="w-auto h-16 " src="https://i.ibb.co/rtvBzLR/final-logo.png" alt="Logo" />
+                    <h2 className="text-3xl text-center font-semibold text-red-600">Autovance</h2>
                     </div>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className=" ">
                     <nav>
-                        <ul className=" menu-horizontal px-1 underline-offset-2">
+                        <ul className="flex  md:text-base text-xs  px-1 mx-auto justify-center">
                             <li className={currentPath === '/' ? 'active' : ''}><NavLink to='/'>Home</NavLink></li>
                             <li className={currentPath === '/addProduct' ? 'active' : ''}><NavLink to='/addProduct'>Add Product</NavLink></li>
-                            <li className={currentPath === '/myCurt' ? 'active' : ''}><NavLink to='/myCurt'>My Curt</NavLink></li>
+                            <li className={currentPath === '/myCurt' ? 'active' : ''}><NavLink to='/myCurt'>My Cart</NavLink></li>
                             <li className={currentPath === '/blogs' ? 'active' : ''}><NavLink to='/blogs'>Blogs</NavLink></li>
                             <li className={currentPath === '/contactUs' ? 'active' : ''}><NavLink to='/contactUs'>Contact Us</NavLink></li>
                         </ul>
                     </nav>
                 </div>
-                <div className="navbar-end">
-                    <Link to='/login'>
-                    <button className="bg-red-400 hover:bg-red-500 px-3 font-semibold py-1 text-white rounded-2xl">Login</button>
-                    </Link>
+                <div className="flex items-center justify-center ">
+                {user &&
+                    <><h2 className="pr-2">{user.displayName}</h2><div className=" mr-2 avatar online">
+                        <div className="w-8  rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                            <img src={user.photoURL} />
+                        </div>
+                    </div></>
+                }
+                {
+                    user ?
+                        <NavLink onClick={handleSignOut} className="rounded-2xl bg-emerald-500 px-3 py-1  text-white font-bold">Sign Out</NavLink>
+                        :
+                        <NavLink to='/login' className="bg-red-400 hover:bg-red-500 px-3 font-semibold py-1 text-white  rounded-2xl">Login</NavLink>
+                }
                 </div>
             </div>
         </div>

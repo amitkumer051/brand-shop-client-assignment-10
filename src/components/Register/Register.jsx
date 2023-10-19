@@ -36,8 +36,7 @@ const Register = () => {
             })
             .catch(error => {
                 console.error(error)
-                Swal.fire(error.message);
-                form.reset()
+                return Swal.fire(error.message);
             })
     }
     return (

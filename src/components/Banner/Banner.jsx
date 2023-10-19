@@ -5,7 +5,7 @@ const Banner = () => {
             <div className="hero-overlay  bg-opacity-60"></div>
             <div className=" text-center text-white lg:flex items-center">
                 <div className="lg:w-1/2 p-10">
-                    <h1 className="mb-4 text-5xl font-bold">Automotive sop and service center</h1>
+                    <h1 className="mb-4 text-5xl font-bold">Automotive Shop and service center</h1>
                     <p className="mb-5">Our Goal is provides excellent customer service, including clear communication about repairs, estimates, and completion timeset.</p>
                     <button className="btn ">Get Started service <BsTools></BsTools></button>
                 </div>

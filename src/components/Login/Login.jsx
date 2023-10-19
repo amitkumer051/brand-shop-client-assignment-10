@@ -5,9 +5,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-    const {userLogin} =useContext(AuthContext);
-    const location = useLocation()
-    const navigate = useNavigate()
+    const { userLogin, signInWithGoogle } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -28,6 +28,14 @@ const Login = () => {
                 Swal.fire(error.message)
                 form.reset();
             })
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => console.error(error))
     }
     return (
 
@@ -54,7 +62,8 @@ const Login = () => {
                     <div>
                         <h2 className="text-center mb-3">Do not have an account? Please <Link to='/register'><span className="text-blue-600 font-bold">Register</span></Link></h2>
                         <div>
-                            <button className="flex  mx-auto items-center text-center rounded-md gap-1 p-2 bg-gray-200 hover:bg-gray-300 text-sm  font-semibold">Google Login <FcGoogle className="text-xl text-center "></FcGoogle></button>
+                            <button
+                                onClick={handleGoogleSignIn} className="flex  mx-auto items-center text-center rounded-md gap-1 p-2 bg-gray-200 hover:bg-gray-300 text-sm  font-semibold">Google Login <FcGoogle className="text-xl text-center "></FcGoogle></button>
                         </div>
                     </div>
                 </form>
