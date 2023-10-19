@@ -1,11 +1,41 @@
+import Swal from "sweetalert2";
 
 const AddProduct = () => {
+
+    const handleAddData =event =>{
+        event.preventDefault();
+        const form = event.target;
+        const image =form.image.value;
+        const name =form.name.value;
+        const brand =form.brand.value;
+        const category =form.category.value;
+        const price =form.price.value;
+        const rating =form.rating.value;
+
+        const addProduct ={image,name,brand,category,price,rating};
+        console.log(addProduct);
+
+        fetch('http://localhost:5000/addProduct',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(addProduct)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({title:'Success', text:'Product Added Successfully' , icon:'success'});
+            }
+        })
+    }
     return (
         <div>
             <div className="p-2 bg-base-200 lg:px-32 py-6 ">
                 <div className="bg-white rounded-md p-6">
                     <h3 className="text-3xl text-center pb-4 font-extrabold">Add Product</h3>
-                    <form>
+                    <form onSubmit={handleAddData}>
                         <div className="md:flex gap-5 ">
                             <div className="form-control md:w-1/2">
                                 <label className="label">

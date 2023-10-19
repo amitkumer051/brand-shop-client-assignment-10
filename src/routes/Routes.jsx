@@ -8,6 +8,7 @@ import Blogs from "../components/Blogs/Blogs";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Brand from "../components/Brand/Brand";
+import BrandDetails from "../Pages/BrandDetails";
 
 const router = createBrowserRouter([
     {
@@ -40,9 +41,15 @@ const router = createBrowserRouter([
             element:<Blogs></Blogs>
         }
       ]
-    },{
+    },
+    {
         path:'/brand',
-        element:<Brand></Brand>,
+        element:<Brand></Brand>
+    },
+    {
+        path:'/brandDetails/:id',
+        loader:()=> fetch('http://localhost:5000/product'),
+        element:<BrandDetails></BrandDetails>
     }
   ]);
 
