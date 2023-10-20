@@ -3,10 +3,14 @@
 import { Link } from "react-router-dom";
 
 const AllBrand = ({ brand }) => {
-    const { id, image, name } = brand || '';
+    const {  image, name } = brand || '';
     console.log(brand);
+
+    const HandleBrand = (name)=>{
+        console.log(name);
+    }
     return (
-        <Link to={`/brandDetails/${id}`}>
+        <Link to={`/brandDetails/${name}`} onClick={()=>HandleBrand(name)}>
             <div className="card w-[340px] h-64 mx-auto justify-center  bg-base-100 hover:shadow-2xl image-full">
                 <figure><img  src={image} /></figure>
                 <div className="card-body">
