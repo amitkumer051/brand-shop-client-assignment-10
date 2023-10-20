@@ -30,8 +30,11 @@ const NavBar = () => {
                             <li className={currentPath === '/' ? 'active' : ''}><NavLink to='/'>Home</NavLink></li>
                             <li className={currentPath === '/addProduct' ? 'active' : ''}><NavLink to='/addProduct'>Add Product</NavLink></li>
                             <li className={currentPath === '/myCurt' ? 'active' : ''}><NavLink to='/myCurt'>My Cart</NavLink></li>
+
+                            <li className={currentPath === '/collection' ? 'active' : ''}><NavLink to='/collection'>Collection</NavLink></li>
+
                             <li className={currentPath === '/blogs' ? 'active' : ''}><NavLink to='/blogs'>Blogs</NavLink></li>
-                            <li className={currentPath === '/contactUs' ? 'active' : ''}><NavLink to='/contactUs'>Contact Us</NavLink></li>
+                            <li className={currentPath === '/contactUs' ? 'active' : ''}><NavLink to='/contactUs'>Support</NavLink></li>
                         </ul>
                     </nav>
                 </div>

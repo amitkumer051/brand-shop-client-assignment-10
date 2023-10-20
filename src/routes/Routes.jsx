@@ -12,6 +12,8 @@ import BrandDetails from "../Pages/BrandDetails";
 import Private from "./Private";
 import ViewDetails from "../Pages/ViewDetails";
 import Update from "../Pages/Update";
+import Support from "../components/Support/Support";
+import Collection from "../components/Collection/Collection";
 
 const router = createBrowserRouter([
     {
@@ -40,8 +42,16 @@ const router = createBrowserRouter([
             element:<Private><MyCurt></MyCurt></Private>
         },
         {
+            path:'/collection',
+            element:<Collection></Collection>
+        },
+        {
             path:'/blogs',
             element:<Blogs></Blogs>
+        },
+        {
+            path:'/contactUs',
+            element:<Support></Support>
         }
       ]
     },

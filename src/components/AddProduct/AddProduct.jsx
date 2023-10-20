@@ -16,7 +16,7 @@ const AddProduct = () => {
         const addProduct = { image, name, brand, category, description, price, rating };
         console.log(addProduct);
 
-        fetch('http://localhost:5000/addProduct', {
+        fetch('http://localhost:5000/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -29,6 +29,7 @@ const AddProduct = () => {
                 if (data.insertedId) {
                     Swal.fire({ title: 'Success', text: 'Product Added Successfully', icon: 'success' });
                 }
+                form.reset();
             })
     }
     return (

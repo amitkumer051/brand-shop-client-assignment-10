@@ -1,10 +1,9 @@
-
+import Advantage from "../../Advantage/Advantage";
 
 const Blogs = () => {
     return (
         <div>
-            <h3>Hello From Blogs</h3>
-
+           <Advantage></Advantage>
         </div>
     );
 };

@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 const Update = () => {
     const products = useLoaderData()
-    const { _id, name, image, description, brand, category, price, rating } = products;
+    const { _id, name, image, brand, category, price, rating } = products;
     console.log(products);
 
     const handleUpdateData = event => {
@@ -14,10 +14,8 @@ const Update = () => {
         const brand = form.brand.value;
         const category = form.category.value;
         const price = form.price.value;
-        const description = form.description.value;
         const rating = form.rating.value;
-
-        const updatedProduct = { image, name, brand, category, price, rating, description };
+        const updatedProduct = { image, name, brand, category, price, rating };
         console.log(updatedProduct);
 
         fetch(`http://localhost:5000/product/${_id}`, {
@@ -77,31 +75,25 @@ const Update = () => {
                                 </label>
                             </div>
                         </div>
-                        <div className="md:flex gap-5 ">
-                            <div className="form-control md:w-1/2">
-                                <label className="label">
-                                    <span className="label-text">Product Price</span>
-                                </label>
-                                <label className="">
-                                    <input type="text" defaultValue={price} placeholder="Product Price" name="price" className="input input-bordered w-full" />
-                                </label>
+                        <div className="md:flex gap-5">
+                            <div className="  md:w-1/2 ">
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text">Product Price</span>
+                                    </label>
+                                    <label className="">
+                                        <input type="text" defaultValue={price} placeholder="Product Price" name="price" className="input input-bordered w-full" />
+                                    </label>
+                                </div>
                             </div>
                             <div className="form-control md:w-1/2">
                                 <label className="label">
-                                    <span className="label-text">Short Description</span>
+                                    <span className="label-text">Product Rating</span>
                                 </label>
-                                <label className="">
-                                    <input type="text" defaultValue={description} placeholder="Short Description" name="description" className="input input-bordered w-full" />
+                                <label>
+                                    <input type="text" defaultValue={rating} placeholder="Product Rating" name="rating" className="input input-bordered w-full" />
                                 </label>
                             </div>
-                        </div>
-                        <div className="form-control md:w-full">
-                            <label className="label">
-                                <span className="label-text">Product Rating</span>
-                            </label>
-                            <label>
-                                <input type="text" defaultValue={rating} placeholder="Product Rating" name="rating" className="input input-bordered w-full" />
-                            </label>
                         </div>
                         <div className="my-6">
                             <button className="p-2 bg-red-400 rounded-lg text-white font-bold hover:bg-red-500 w-full">Submit button</button>
