@@ -9,7 +9,7 @@ const BrandDetails = () => {
     console.log(product);
     return (
         <div>
-            <div className="carousel w-full  lg:h-[400px]">
+            <div className="carousel lg:h-[400px]">
                 <div id="item1" className="carousel-item w-full">
                     <img src="https://i.ibb.co/8X1KMsb/bmw1.jpg" className="w-full" />
                 </div>
