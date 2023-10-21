@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AllBrand from "./AllBrand";
 
+
 const Brand = () => {
     const [brands,setBrands] =useState()
     
