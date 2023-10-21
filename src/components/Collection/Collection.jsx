@@ -6,7 +6,7 @@ const Collection = () => {
     const [collection,setCollection] =useState()
 
     useEffect(()=>{
-        fetch('http://localhost:5000/collection')
+        fetch('https://brand-shop-server-assignment-10-h06m6z73j.vercel.app/collection')
         .then(res => res.json())
         .then(data => setCollection(data))
         

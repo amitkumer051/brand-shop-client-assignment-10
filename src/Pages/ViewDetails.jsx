@@ -25,7 +25,7 @@ const ViewDetails = () => {
         const addToCart = { image, brand, price, rating, name, userMail }
         console.log(addToCart);
 
-        fetch('http://localhost:5000/cart', {
+        fetch('https://brand-shop-server-assignment-10-h06m6z73j.vercel.app/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
