@@ -11,7 +11,7 @@ const AllBrand = ({ brand }) => {
     }
     return (
         <Link to={`/brandDetails/${name}`} onClick={()=>HandleBrand(name)}>
-            <div className="card w-[340px] h-64 mx-auto justify-center  bg-base-100 hover:shadow-2xl image-full">
+            <div className="card md:w-[340px] w-[320px] h-64 mx-auto justify-center  bg-base-100 hover:shadow-2xl image-full">
                 <figure><img  src={image} /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-4xl font-bold">{name}</h2>
