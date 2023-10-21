@@ -5,7 +5,7 @@ import Products from "./Products";
 const BrandDetails = () => {
     const products = useLoaderData()
     const { id } = useParams();
-    const product = products?.filter(product => product?.name.toLowerCase() == id.toLowerCase());
+    const product = products.filter(product => product?.name.toLowerCase() == id.toLowerCase());
     console.log(product[0].image);
     return (
         <div>

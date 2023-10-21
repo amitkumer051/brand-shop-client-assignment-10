@@ -13,7 +13,7 @@ const MyCurt = () => {
     
     console.log(carts);
 
-    const individualCart = carts?.filter(newCart => newCart?.userMail == currentUser)
+    const individualCart = carts.filter(newCart => newCart?.userMail == currentUser)
 
     return (
         <div className="my-4">

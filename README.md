@@ -19,3 +19,4 @@ customer/Admin will have log in or register my site.
 - He/she can choose and add to cart individual product in his chooing product.
 - My cart is individual customer services.
 
+Live link: https://brand-shop-assignment-10-276b8.web.app/
