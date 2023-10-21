@@ -6,21 +6,21 @@ const BrandDetails = () => {
     const products = useLoaderData()
     const { id } = useParams();
     const product = products?.filter(product => product?.name?.toLowerCase() == id.toLowerCase());
-    console.log(product);
+    console.log(product[0].image);
     return (
         <div>
             <div className="carousel lg:h-[400px]">
                 <div id="item1" className="carousel-item w-full">
-                    <img src="https://i.ibb.co/8X1KMsb/bmw1.jpg" className="w-full" />
+                    <img src={product[0]?.image} className="w-full" />
                 </div>
                 <div id="item2" className="carousel-item w-full">
-                    <img src="https://i.ibb.co/8xkS6hK/bmw-2.jpg" className="w-full" />
+                    <img src={product[1]?.image} className="w-full" />
                 </div>
                 <div id="item3" className="carousel-item w-full">
-                    <img src="https://i.ibb.co/jvBy3kj/mercedes-benz-2.jpg" className="w-full" />
+                    <img src={product[2]?.image} className="w-full" />
                 </div>
                 <div id="item4" className="carousel-item w-full">
-                    <img src="https://i.ibb.co/TYS17Gs/Honda-2.jpg" className="w-full" />
+                    <img src={product[3]?.image} className="w-full" />
                 </div>
             </div>
             <div className="flex justify-center w-full py-2 gap-2">

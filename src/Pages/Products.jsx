@@ -7,7 +7,7 @@ const Products = ({ individualProduct }) => {
     console.log(individualProduct);
     return (
         <div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto justify-center">
+            <div className="card card-compact w-96 h-[400px] bg-base-100 shadow-xl mx-auto justify-center">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <div className="flex justify-between">
